@@ -6,6 +6,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import { mdxPrism } from "./build-helpers/mdxPrism";
 import remarkToc from "remark-toc";
+import tailwindcss from "@tailwindcss/vite";
 
 const { default: mdx } = pkg;
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
 				providerImportSource: "solid-mdx",
 			}),
 			blogPostsPlugin(),
+			tailwindcss(),
 		],
 		build: {
 			minify: false,

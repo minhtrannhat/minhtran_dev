@@ -1,6 +1,5 @@
 import { A } from "@solidjs/router";
-import { For, type ParentComponent } from "solid-js";
-import { TextHoverJump } from "./TextHoverJump";
+import type { ParentComponent } from "solid-js";
 import { clientOnly } from "@solidjs/start";
 
 const DarkModeToggle = clientOnly(() =>
@@ -8,6 +7,18 @@ const DarkModeToggle = clientOnly(() =>
 		default: r.DarkModeToggle,
 	})),
 );
+
+function changeFavicon(newFaviconPath: string) {
+	const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+	if (link) {
+		link.href = newFaviconPath;
+	} else {
+		const newLink = document.createElement("link");
+		newLink.rel = "icon";
+		newLink.href = newFaviconPath;
+		document.head.appendChild(newLink);
+	}
+}
 
 export const Layout: ParentComponent = (props) => {
 	return (
@@ -18,7 +29,7 @@ export const Layout: ParentComponent = (props) => {
 			<div class="flex flex-col min-h-screen pt-2v py-1v px-2h max-w-thread mx-auto relative overflow-x-hidden leading-1 box-border decoration-2 underline-offset-2">
 				<header class="flex flex-col items-center justify-center gap-2v px-4h py-2v">
 					<a href="/" class="text-2v leading-2 font-bold">
-						<TextHoverJump text="~/minhtrannhat.com" />
+						~/minhtrannhat
 					</a>
 
 					<DarkModeToggle />
@@ -44,7 +55,12 @@ export const Layout: ParentComponent = (props) => {
 							>
 								Tags
 							</A>
-							<a href="/resume.pdf" target="_blank" rel="noreferrer">
+							<a
+								href="/resume.pdf"
+								target="_blank"
+								rel="noreferrer"
+								onClick={() => changeFavicon("./favicon.ico")}
+							>
 								Resume
 							</a>
 						</ul>

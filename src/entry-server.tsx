@@ -8,8 +8,7 @@ export default createHandler(() => (
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-					<link rel="icon" type="image/png" href="/favicon.png" />
+					<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 					<script>
 						{`document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches)`}
 					</script>

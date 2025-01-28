@@ -5,6 +5,7 @@ import { Posts } from "~/components/Posts";
 const links = [
 	"https://github.com/minhtrannhat",
 	"https://linkedin.com/in/minh-tran-nhat",
+	"https://git.minhtrannhat.com/explore/repos",
 ];
 const Homepage = () => {
 	return (
@@ -12,11 +13,6 @@ const Homepage = () => {
 			<section class="flex flex-col sm:flex-row gap-2v sm:gap-3h">
 				<div class="font-medium">
 					<div class="flex items-end mb-1v gap-1h">
-						<img
-							class="inline-block h-2v select-none wave-image"
-							alt="wave emoji"
-							src="/images/wave-pixel.png"
-						/>
 						<p>Hi, Minh here.</p>
 					</div>
 					<p class="mb-1v">
