@@ -1,4 +1,5 @@
 import { defineConfig } from "@solidjs/start/config";
+import tailwindcss from "@tailwindcss/vite";
 //@ts-expect-error
 import pkg from "@vinxi/plugin-mdx";
 import { blogPostsPlugin } from "./build-helpers/blogPostsPlugin";
@@ -6,13 +7,13 @@ import remarkFrontmatter from "remark-frontmatter";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import { mdxPrism } from "./build-helpers/mdxPrism";
 import remarkToc from "remark-toc";
-import tailwindcss from "@tailwindcss/vite";
 
 const { default: mdx } = pkg;
 export default defineConfig({
 	extensions: ["mdx", "md"],
 	vite: {
 		plugins: [
+			tailwindcss(),
 			mdx.withImports({})({
 				remarkPlugins: [remarkFrontmatter, remarkToc],
 				rehypePlugins: [rehypeMdxCodeProps, mdxPrism],
@@ -21,10 +22,9 @@ export default defineConfig({
 				providerImportSource: "solid-mdx",
 			}),
 			blogPostsPlugin(),
-			tailwindcss(),
 		],
 		build: {
-			minify: false,
+			target: "esnext",
 		},
 	},
 	server: {

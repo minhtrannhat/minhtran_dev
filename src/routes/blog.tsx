@@ -5,7 +5,6 @@ import { posts } from "~/data/posts";
 import { MDXProvider } from "solid-mdx";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import dayjs from "dayjs";
-import "../css/prism-theme.css";
 import type { Post } from "~/types";
 
 const Blog = (props: RouteSectionProps<unknown>) => {

@@ -34,9 +34,6 @@ const config: Config = {
 			medium: "600",
 			bold: "800",
 		},
-		maxWidth: {
-			thread: "calc(min(80ch, round(down, 100%, 1ch)))",
-		},
 		lineHeight: buildLineHeights(),
 		colors: {
 			black: "#000000",
@@ -70,7 +67,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwind-nord")],
 };
 
 export default config;

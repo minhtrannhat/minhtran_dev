@@ -1,12 +1,5 @@
 import { A } from "@solidjs/router";
 import type { ParentComponent } from "solid-js";
-import { clientOnly } from "@solidjs/start";
-
-const DarkModeToggle = clientOnly(() =>
-	import("./DarkModeToggle").then((r) => ({
-		default: r.DarkModeToggle,
-	})),
-);
 
 function changeFavicon(newFaviconPath: string) {
 	const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
@@ -26,16 +19,14 @@ export const Layout: ParentComponent = (props) => {
 			<a href="#main-content" class="sr-only">
 				Skip to main content
 			</a>
-			<div class="flex flex-col min-h-screen pt-2v py-1v px-2h max-w-thread mx-auto relative overflow-x-hidden leading-1 box-border decoration-2 underline-offset-2">
+			<div class="bg-nord-6 flex flex-col min-h-screen pt-2v py-1v px-2h max-w-full mx-auto relative overflow-x-hidden leading-1 box-border decoration-2 underline-offset-2">
 				<header class="flex flex-col items-center justify-center gap-2v px-4h py-2v">
-					<a href="/" class="text-2v leading-2 font-bold">
+					<a href="/" class="text-nord-3 text-2v leading-2 font-bold">
 						~/minhtrannhat
 					</a>
 
-					<DarkModeToggle />
-
-					<nav>
-						<ul class="flex items-center gap-7h">
+					<nav class="container mx-auto px-4 py-4">
+						<ul class="flex flex-wrap justify-center items-center gap-6">
 							<A end class="hover:underline" activeClass="font-bold" href={"/"}>
 								Home
 							</A>
@@ -70,8 +61,6 @@ export const Layout: ParentComponent = (props) => {
 				<main id="main-content" class="mt-1v flex-auto">
 					{props.children}
 				</main>
-
-				<div class="debug-grid" />
 			</div>
 		</>
 	);

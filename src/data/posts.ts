@@ -1,4 +1,3 @@
-// @ts-expect-error
 import Posts from "./posts.json";
 import type { Post } from "~/types";
 
