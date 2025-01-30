@@ -42,7 +42,7 @@ const Pre: ParentComponent<{ lang: string; lines?: string; file?: string }> = (
 
 	return (
 		<div class="my-1v">
-			<div class="bg-black text-white dark:bg-white dark:text-black flex justify-between px-1h text-sm leading-1">
+			<div class="bg-nord2 text-nord12 flex justify-between px-1h text-sm leading-1">
 				<Show when={props.file} fallback={<span aria-hidden />}>
 					<span>{props.file}</span>
 				</Show>
@@ -186,9 +186,9 @@ export const PostImage: Component<{
 	);
 };
 
-export const Aside: ParentComponent = (props) => (
+export const Notes: ParentComponent = (props) => (
 	<aside class="border-l-2 border-black dark:border-white pl-1h mt-1v">
-		<div class="uppercase text-sm leading-1 font-medium select-none">Aside</div>
+		<div class="uppercase text-sm leading-1 font-medium select-none">Notes</div>
 		<div class="[&_*:first-child]:mt-0">{props.children}</div>
 	</aside>
 );

@@ -22,17 +22,22 @@ export const Layout: ParentComponent = (props) => {
 			<div class="bg-nord-6 flex flex-col min-h-screen pt-2v py-1v px-2h max-w-full mx-auto relative overflow-x-hidden leading-1 box-border decoration-2 underline-offset-2">
 				<header class="flex flex-col items-center justify-center gap-2v px-4h py-2v">
 					<a href="/" class="text-nord-3 text-2v leading-2 font-bold">
-						~/minhtrannhat
+						~/minh
 					</a>
 
 					<nav class="container mx-auto px-4 py-4">
 						<ul class="flex flex-wrap justify-center items-center gap-6">
-							<A end class="hover:underline" activeClass="font-bold" href={"/"}>
+							<A
+								end
+								class="hover:underline hover:text-nord10"
+								activeClass="font-bold"
+								href={"/"}
+							>
 								Home
 							</A>
 							<A
 								end
-								class="hover:underline"
+								class="hover:underline hover:text-nord10"
 								activeClass="font-bold"
 								href={"/articles"}
 							>
@@ -40,20 +45,21 @@ export const Layout: ParentComponent = (props) => {
 							</A>
 							<A
 								end
-								class="hover:underline"
+								class="hover:underline hover:text-nord10"
 								activeClass="font-bold"
 								href={"/tags"}
 							>
 								Tags
 							</A>
-							<a
+							<A
+								class="hover:text-nord10"
 								href="/resume.pdf"
 								target="_blank"
 								rel="noreferrer"
 								onClick={() => changeFavicon("./favicon.ico")}
 							>
 								Resume
-							</a>
+							</A>
 						</ul>
 					</nav>
 				</header>

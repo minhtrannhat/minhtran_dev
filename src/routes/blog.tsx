@@ -5,6 +5,7 @@ import { posts } from "~/data/posts";
 import { MDXProvider } from "solid-mdx";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import dayjs from "dayjs";
+import "../css/prism-nord.css";
 import type { Post } from "~/types";
 
 const Blog = (props: RouteSectionProps<unknown>) => {
@@ -18,7 +19,7 @@ const Blog = (props: RouteSectionProps<unknown>) => {
 
 	return (
 		<article class="pb-5v">
-			<Title>minhtrannhat.com - {meta()?.title}</Title>
+			<Title>minhtran_dev - {meta()?.title}</Title>
 			<Meta name="og:title" content={meta().title} />
 			<Meta name="description" content={meta().description} />
 			<Meta name="og:description" content={meta().description} />

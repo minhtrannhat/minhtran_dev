@@ -1,0 +1,118 @@
+---
+title: Testing Test Test Test
+description: Woah this is so cool
+date: 2025-1-29
+featuredImage: 
+featuredImageDesc:
+tags:
+  - rust
+  - python
+  - mdx
+  - markdown
+---
+import { Notes, PostImage } from "~/components/Markdown"
+import { Tree } from "~/components/Tree"
+
+Woah this blog is sooo cool, look at all these beautifully rendered markdown stuffs :OOOO
+
+<Notes>
+
+Notty Notes
+
+</Notes>
+
+## Contents
+
+<hr />
+
+## Python
+
+### longestCommonSubsequence
+
+```python lang="python" file="leetcode1143.py"
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        
+        # edge cases
+
+        # both texts are just length of 1:
+        if len(text1) == 1 and len(text2) == 1:
+            return int(text1 == text2)
+        
+        # only one row:
+        if len(text2) == 1 and len(text1) > 1:
+            return int(text2 in text1)
+        
+        # only one col:
+        if len(text1) == 1 and len(text2) > 1:
+            return int(text1 in text2)
+        
+        rows = len(text2)
+        cols = len(text1)
+
+        # we use bottom up 2D DP
+        # reaching here means it is at least 2x2
+        dp = [
+            [0 for _ in range(cols)] for _ in range(rows)
+        ]
+
+        # seed the top left tile
+        dp[0][0] = 1 if text1[0] == text2[0] else 0
+
+        # we seed the first row and first col
+        for col in range(1, cols):
+            dp[0][col] = dp[0][col - 1] if text1[col] != text2[0] else 1
+
+        
+        for row in range(1, rows):
+            dp[row][0] = dp[row - 1][0] if text1[0] != text2[row] else 1
+        
+
+        # for the inner triangle, we use the following
+        # dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) if text1[i] != text2[j] 
+        #               else max(dp[i - 1][j], dp[i][j - 1]) + 1
+
+        for row in range(1, rows):
+            for col in range(1, cols):
+                dp[row][col] = dp[row - 1][col - 1] + 1 if text1[col] == text2[row] else max(dp[row - 1][col], dp[row][col - 1])
+
+        # return the bottom right tile
+        return dp[rows - 1][cols - 1]
+
+        # space and time complexity: both O(N * M)
+
+        # CAN OPTIMIZE TO GET SPACE COMPLEXITY OF O(MIN(N, M))
+```
+
+## Rust
+
+### Async Programming stuffs
+
+```rust lang="rust" file="ffi.rs"
+// Here we have the syscalls
+// Unsafe !!!
+#[link(name = "c")]
+extern "C" {
+    pub fn epoll_create(size: i32) -> i32;
+    pub fn close(fd: i32) -> i32;
+    pub fn epoll_ctl(epfd: i32, op: i32, fd: i32, event: *mut Event) -> i32;
+    pub fn epoll_wait(epfd: i32, events: *mut Event, maxevents: i32, timeout: i32) -> i32;
+}
+
+// Avoid padding by using repr(packed)
+// Data struct is different in Rust compared to C
+#[derive(Debug)]
+#[repr(C)]
+#[cfg_attr(target_arch = "x86_64", repr(packed))]
+pub struct Event {
+    pub(crate) events: u32,
+    // Using `Token` a.k.a `epoll_data` to track which socket generated the event
+    pub(crate) epoll_data: usize,
+}
+
+impl Event {
+    pub fn token(&self) -> usize {
+        self.epoll_data
+    }
+}
+```

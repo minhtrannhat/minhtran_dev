@@ -1,27 +1,20 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { createSignal, onCleanup, onMount, Suspense } from "solid-js";
+import { Suspense } from "solid-js";
 import "./app.css";
 import { Layout } from "./components/Layout";
-import { MetaProvider, Title } from "@solidjs/meta";
+import { MetaProvider, Title, Meta } from "@solidjs/meta";
 
 export default function App() {
-	onMount(() => {
-		const listener = (e: KeyboardEvent) => {
-			if (e.metaKey && e.key.toLowerCase() === "k") {
-				e.preventDefault(); // Prevent the default action (optional)
-				document.body.classList.toggle("debug");
-			}
-		};
-		window.addEventListener("keydown", listener);
-		onCleanup(() => {
-			window.removeEventListener("keydown", listener);
-		});
-	});
-
 	return (
 		<MetaProvider>
-			<Title>minhtrannhat.com</Title>
+			<Title>minhtran_dev</Title>
+			<Meta property="og:title" content="minhtran_dev" />
+			<Meta property="og:description" content="just trying my best :)" />
+			<Meta property="og:image" content="/og.png" />
+			<Meta property="og:image:alt" content="minhtran_dev site" />
+			<Meta property="og:image:width" content="1200" />
+			<Meta property="og:image:height" content="630" />
 			<Router
 				root={(props) => {
 					return (

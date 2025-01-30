@@ -19,8 +19,8 @@ const Homepage = () => {
 						Montreal, Canada.
 						<br />
 						<br />
-						I'm most passionate about designing distributed systems that scales
-						but I'm also interested in compilers and systems programming.
+						Things that I'm most passionate about: distributed systems, backend
+						development, compilers and systems programming.
 						<br />
 						<br />
 						When I'm not coding, I read books, listen to podcasts or study music
@@ -29,7 +29,7 @@ const Homepage = () => {
 					<p>
 						Say hi:{" "}
 						<a
-							class="underline"
+							class="underline hover:text-nord-11"
 							target="_blank"
 							rel="noreferrer"
 							href="mailto:minh@minhtrannhat.com"
@@ -41,7 +41,7 @@ const Homepage = () => {
 				<ul class="mx-4 sm:mx-6 sm:mt-3v text-slate-600 text-base sm:text-sm leading-1">
 					<For each={links}>
 						{(link) => (
-							<li class="list-square hover:text-black ml-2h leading-1">
+							<li class="list-square hover:text-nord-11 ml-2h leading-1">
 								<a
 									target="_blank"
 									rel="noreferrer"

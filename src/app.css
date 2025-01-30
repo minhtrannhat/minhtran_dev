@@ -1,6 +1,4 @@
 @import url("https://fonts.cdnfonts.com/css/jetbrains-mono-2");
-@import "tailwindcss";
-
 @config "../tailwind.config.ts";
 
 .tree,
@@ -45,3 +43,5 @@
 	height: calc(var(--line-height) / 2);
 	border-left: var(--border-thickness) solid var(--text-color);
 }
+
+@import "tailwindcss";

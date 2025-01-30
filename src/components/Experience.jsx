@@ -3,13 +3,13 @@ import JobCard from "./JobCard";
 import { createSignal } from "solid-js";
 
 const Experience = () => {
-	const [jobs, setJobs] = createSignal([
+	const [jobs, _] = createSignal([
 		{
 			title: "Software Developer Engineer Intern",
 			company: "Amazon (Delivery Extensions Team)",
 			location: "Toronto, Ontario, Canada",
 			range: "May 2025 - July 2025",
-			url: "",
+			url: "https://amazon.jobs/content/en/teams/ftr",
 		},
 		{
 			title: "Software Engineer Intern",
@@ -21,9 +21,10 @@ const Experience = () => {
 	]);
 
 	return (
-		<section class="mt-6 mx-auto px-4">
-			<h2 class="mt-6 text-xl font-bold mb-8">Experience</h2>
-			<div>
+		<section class="mt-16 px-4">
+			<h2 class="text-xl text-nord-1 font-bold mb-6">Experience</h2>
+
+			<div class="!flex !flex-col !gap-0.5v ml-2h">
 				<For each={jobs()}>{(job) => <JobCard job={job} />}</For>
 			</div>
 		</section>
