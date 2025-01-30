@@ -2,7 +2,7 @@
 	{
 		"title": "Testing Test Test Test",
 		"description": "Woah this is so cool",
-		"date": "2025-1-29",
+		"date": "2025-01-29",
 		"featuredImage": null,
 		"featuredImageDesc": null,
 		"tags": ["rust", "python", "mdx", "markdown"],

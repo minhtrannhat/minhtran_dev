@@ -5,6 +5,7 @@
 		"dev": "vinxi dev",
 		"build": "vinxi build",
 		"start": "vinxi start",
+		"serve": "vinxi serve --dir .output/public --port 8085",
 		"preview": "npx http-server ./.output/public"
 	},
 	"dependencies": {
