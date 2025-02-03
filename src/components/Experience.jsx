@@ -6,14 +6,14 @@ const Experience = () => {
 	const [jobs, _] = createSignal([
 		{
 			title: "Software Developer Engineer Intern",
-			company: "Amazon (Delivery Extensions Team)",
+			company: "Amazon Canada (Delivery Extensions Team)",
 			location: "Toronto, Ontario, Canada",
 			range: "May 2025 - July 2025",
 			url: "https://amazon.jobs/content/en/teams/ftr",
 		},
 		{
 			title: "Software Engineer Intern",
-			company: "Cisco Systems",
+			company: "Cisco Canada",
 			location: "Remote",
 			range: "January 2023 - May 2023",
 			url: "https://developer.cisco.com/docs/modeling-labs/cat-9000v/",
