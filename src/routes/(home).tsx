@@ -27,7 +27,7 @@ const Homepage = () => {
 						theory.
 					</p>
 					<p>
-						Say hi:{" "}
+						Email me at:{" "}
 						<a
 							class="underline hover:text-nord-11"
 							target="_blank"

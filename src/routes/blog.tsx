@@ -2,6 +2,7 @@ import { For, Show } from "solid-js";
 import type { RouteSectionProps } from "@solidjs/router";
 import { Meta, Title } from "@solidjs/meta";
 import { posts } from "~/data/posts";
+//@ts-expect-error
 import { MDXProvider } from "solid-mdx";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import dayjs from "dayjs";

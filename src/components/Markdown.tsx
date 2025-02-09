@@ -42,7 +42,7 @@ const Pre: ParentComponent<{ lang: string; lines?: string; file?: string }> = (
 
 	return (
 		<div class="my-1v">
-			<div class="bg-nord2 text-nord12 flex justify-between px-1h text-sm leading-1">
+			<div class="bg-nord2 text-nord12 text-xl flex justify-between px-1h leading-2">
 				<Show when={props.file} fallback={<span aria-hidden />}>
 					<span>{props.file}</span>
 				</Show>
