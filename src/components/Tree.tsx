@@ -3,6 +3,9 @@ import { type Component, For, Show } from "solid-js";
 type Node = { l: string; c: TreeNode[] };
 type TreeNode = string | Node;
 
+/*
+ * Code from andii.dev
+ */
 const Subtree: Component<{ tree: TreeNode }> = (props) => {
 	return (
 		<Show

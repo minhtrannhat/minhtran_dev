@@ -3,6 +3,9 @@ import { toString as nodeToString } from "hast-util-to-string";
 import { refractor } from "refractor";
 import tsx from "refractor/lang/tsx.js";
 
+/*
+ * Code from andii.dev
+ */
 refractor.register(tsx);
 
 export const mdxPrism = () => {

@@ -4,6 +4,9 @@ import { posts } from "~/data/posts";
 import { Posts } from "~/components/Posts";
 import { tags } from "~/data/tags";
 
+/*
+ * Code from andii.dev
+ */
 const TagId: Component<RouteSectionProps<unknown>> = (props) => {
 	const tag = () => tags[props.params.id];
 	return (

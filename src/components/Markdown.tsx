@@ -8,6 +8,9 @@ import {
 	onMount,
 } from "solid-js";
 
+/*
+ * Code from andii.dev
+ */
 const P: ParentComponent = (props) => <p class="mt-1v">{props.children}</p>;
 
 const Ol: ParentComponent = (props) => (

@@ -1,6 +1,9 @@
 import { A } from "@solidjs/router";
 import type { ParentComponent } from "solid-js";
 
+/*
+ * Code from andii.dev
+ */
 function changeFavicon(newFaviconPath: string) {
 	const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
 	if (link) {

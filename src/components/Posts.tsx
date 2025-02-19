@@ -2,6 +2,9 @@ import dayjs from "dayjs";
 import { type Component, For } from "solid-js";
 import type { Post } from "~/types";
 
+/*
+ * Code from andii.dev
+ */
 export const Posts: Component<{ posts: Post[] }> = (props) => {
 	return (
 		<ol class="">

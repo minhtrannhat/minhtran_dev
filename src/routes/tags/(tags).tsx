@@ -1,6 +1,9 @@
 import { For } from "solid-js";
 import { tags } from "~/data/tags";
 
+/*
+ * Code from andii.dev
+ */
 const Tags = () => {
 	return (
 		<div>

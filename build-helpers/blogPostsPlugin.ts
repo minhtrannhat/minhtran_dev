@@ -5,6 +5,9 @@ import { resolve, join } from "node:path";
 import { readdirSync, statSync, writeFileSync } from "node:fs";
 import { exec } from "node:child_process";
 
+/*
+ * Code from andii.dev
+ */
 const processFiles = () => {
 	const outputFile = resolve("src/data/posts.json");
 	const blogDir = resolve("src/routes/blog");

@@ -9,6 +9,9 @@ import dayjs from "dayjs";
 import "../css/prism-nord.css";
 import type { Post } from "~/types";
 
+/*
+ * Code from andii.dev
+ */
 const Blog = (props: RouteSectionProps<unknown>) => {
 	const meta = () =>
 		posts.find((p) => props.location.pathname.endsWith(p.slug)) as Post;
