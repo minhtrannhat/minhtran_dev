@@ -27,6 +27,17 @@ const Blog = (props: RouteSectionProps<unknown>) => {
 			<Meta name="og:title" content={meta().title} />
 			<Meta name="description" content={meta().description} />
 			<Meta name="og:description" content={meta().description} />
+			<Meta property="og:type" content="article" />
+
+			<Meta
+				property="og:url"
+				content={`https://minhtranhat.com/blog/${meta()?.slug}`}
+			/>
+
+			<Meta property="og:image" content="/og.png" />
+			<Meta property="og:image:alt" content="minhtran_dev site" />
+			<Meta property="og:image:width" content="1200" />
+			<Meta property="og:image:height" content="630" />
 
 			<Show when={meta().featuredImage}>
 				<PostImage
@@ -35,6 +46,7 @@ const Blog = (props: RouteSectionProps<unknown>) => {
 					alt={meta().featuredImageDesc || ""}
 				/>
 			</Show>
+
 			<h1 class="text-2v leading-2 font-bold mb-1v">{meta().title}</h1>
 
 			<div class="flex items-center gap-4h mb-2v text-sm leading-1">

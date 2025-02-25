@@ -1,11 +1,20 @@
 import { posts } from "~/data/posts";
 import dayjs from "dayjs";
-
+import { Title, Meta } from "@solidjs/meta";
 import { For } from "solid-js";
 
 const Articles = () => {
 	return (
 		<div>
+			<Title>minhtran_dev - Articles</Title>
+
+			<Meta property="og:title" content="minhtran_dev Articles" />
+			<Meta property="og:description" content="My articles" />
+			<Meta property="og:image" content="/og.png" />
+			<Meta property="og:image:alt" content="minhtran_dev site" />
+			<Meta property="og:image:width" content="1200" />
+			<Meta property="og:image:height" content="630" />
+
 			<ol class="flex flex-col gap-1v list-square ml-2h">
 				<For each={Object.values(posts)}>
 					{(post) => (

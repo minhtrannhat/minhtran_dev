@@ -1,14 +1,25 @@
 import { For } from "solid-js";
 import Experience from "../components/Experience";
+import { Title, Meta } from "@solidjs/meta";
 
 const links = [
 	"https://github.com/minhtrannhat",
 	"https://linkedin.com/in/minh-tran-nhat",
 	"https://git.minhtrannhat.com/explore/repos",
 ];
+
 const Homepage = () => {
 	return (
 		<div>
+			<Title>minhtran_dev</Title>
+
+			<Meta property="og:title" content="minhtran_dev" />
+			<Meta property="og:description" content="just trying my best :)" />
+			<Meta property="og:image" content="/og.png" />
+			<Meta property="og:image:alt" content="minhtran_dev site" />
+			<Meta property="og:image:width" content="1200" />
+			<Meta property="og:image:height" content="630" />
+
 			<section class="mx-4 flex flex-col sm:flex-row gap-2v sm:gap-3h">
 				<div class="font-medium">
 					<div class="text-nord-1 flex items-end mb-1v gap-1h">
